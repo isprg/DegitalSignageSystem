@@ -1,0 +1,4 @@
+*.mp4
+!black.mp4
+!white.mp4
+__pycache__/

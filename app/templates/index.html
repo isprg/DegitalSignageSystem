@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DegitalSignageSystem</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <h1>DegitalSignageSystem</h1>
+    <p>現在の動画：{{ video_path }}</p>
+    <h2>操作</h2>
+    <ul>
+        <li><a href="{{ url_for('index') }}">更新</a></li>
+        <li><a href="{{ url_for('view') }}" target="_blank">デジタルサイネージ画面</a></li>
+    </ul>
+    <h2>動画一覧</h2>
+    <p>動画を選択してください：</p>
+    <ul aria-label="Video List">
+        {% for video in videos %}
+        <li><a href="{{ url_for('index', video=video.name) }}">{{ video.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
